@@ -41,5 +41,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: gcloud version
       - run: ls -l
-      - run: mvn clean install
+      - run: mvn clean install assembly:single
       - run: ls -l target/
