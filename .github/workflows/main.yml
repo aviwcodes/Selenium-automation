@@ -1,0 +1,44 @@
+name: Run automation on a virtual machine
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+      environment_name:
+        description: 'Enter expected airflow environment name'
+        required: true
+        default: 'gcp-airflow-environment'
+      location:
+        description: 'location'
+        required: true
+        default: 'us-east1'
+      image-version:
+        description: 'image-version'
+        required: true
+        default: 'composer-1.20.12-airflow-2.4.3'
+      node-count:
+        description: 'node-count'
+        required: true
+        default: '3'
+      disk-size:
+        description: 'disk-size'
+        required: true
+        default: '40'
+      zone:
+        description: 'zone'
+        required: true
+        default: 'us-east1-b'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      - run: gcloud init
+      - run: gcloud version
+      - run: gcloud compute images list
