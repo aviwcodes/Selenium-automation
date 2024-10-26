@@ -39,6 +39,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - run: gcloud init
       - run: gcloud version
       - run: gcloud compute images list
