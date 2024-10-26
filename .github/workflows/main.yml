@@ -40,4 +40,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: gcloud version
-      - run: gcloud compute images list
+      - run: ls -l
