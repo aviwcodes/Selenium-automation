@@ -43,4 +43,4 @@ jobs:
       - run: ls -l
       - run: mvn clean install assembly:single
       - run: ls -l target/
-      - run: java -cp AutomationFramework-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.MainClass
+      - run: java -cp target/AutomationFramework-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.MainClass
